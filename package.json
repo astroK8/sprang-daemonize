@@ -1,0 +1,39 @@
+{
+  "name": "sprang-daemonize",
+  "version": "0.0.0",
+  "description": "",
+  "main": "build/daemonize.js",
+  "module": "es/daemonize.js",
+  "typings": "build/daemonize.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "release-it": "^8.4.2",
+    "typescript": "^3.1.6"
+  },
+  "scripts": {
+    "pretest": "npm run compile",
+    "test": "testem",
+    "compile": "npm run compile-es && npm run compile-commonjs",
+    "compile-es": "tsc --outDir es --module es6 --moduleResolution node",
+    "compile-commonjs": "tsc --outDir ./build",
+    "prepublishOnly": "npm run compile",
+    "release-major": "release-it major",
+    "release-minor": "release-it minor",
+    "release-patch": "release-it",
+    "release-test": "release-it --dry-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astroK8/sprang-daemonize.git"
+  },
+  "keywords": [
+    "angular",
+    "decorators"
+  ],
+  "author": "Aymeric Trotignon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/astroK8/sprang-daemonize/issues"
+  },
+  "homepage": "https://github.com/astroK8/sprang-daemonize#readme"
+}
